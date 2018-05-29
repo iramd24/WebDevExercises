@@ -1,0 +1,292 @@
+/* Default styles */
+
+:root {
+    /* Variables */
+    --main-font: 'Lato', sans-serif;
+    --title-font: 'Montserrat', sans-serif;
+    --regular-font-size: 16px;
+    --medium-font-size: 20px;
+    --big-font-size: 60px;
+    --gigant-font-size: 80px;
+    --accent-color: #ff4c3d;
+    --cherry: #631526;
+    --white: #fff;
+    --black: #494c4f;
+    --black-a: #494c4f88;
+    --black-trans: #494c4f11;
+    /* Mixins */
+    --button: {
+        background-color: var(--button-bg, var(--accent-color));
+        color: var(--button-bg, var(--white));
+        border-radius: 75px;
+    }
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+}
+
+
+/* Typography */
+
+.h1--big {
+    font-size: var(--big-font-size);
+}
+
+.h1--gigant {
+    font-size: var(--gigant-font-size);
+}
+
+.h1__shadow {
+    height: 100px;
+}
+
+.h1__front {
+    height: 100%;
+}
+
+.h1__back {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--black-trans);
+    text-transform: uppercase;
+}
+
+.h3 {
+    color: var(--black);
+    font-size: var(--medium-font-size);
+}
+
+.h3--underline {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.h4--underline {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.h4--underline-orange {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.h3--underline::after {
+    content: '';
+    width: 120%;
+    height: 2px;
+    position: absolute;
+    left: -10%;
+    /* hace el calculo de a cuanto equivale el 100%*/
+    top: calc(100% + 10px);
+    background: var(--black-a);
+}
+
+.h4--underline::after {
+    content: '';
+    width: 15%;
+    height: 2px;
+    position: absolute;
+    left: 42%;
+    /* hace el calculo de a cuanto equivale el 100%*/
+    top: calc(100% + 10px);
+    background: var(--black-a);
+}
+
+.h4--underline-orange::after {
+    content: '';
+    width: 120%;
+    height: 2px;
+    position: absolute;
+    left: -10%;
+    /* hace el calculo de a cuanto equivale el 100%*/
+    top: calc(100% + 10px);
+    background: var(--accent-color);
+}
+
+.h4 {
+    font-size: var(--regular-font-size);
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.h5 {
+    font-size: var(--regular-font-size);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.p {
+    font-size: var(--regular-font-size);
+    color: var(--black-a);
+    line-height: 1.8;
+}
+
+
+/* General */
+
+.overlay {
+    position: absolute;
+    z-index: 10;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+.carousel-caption {
+    position: static;
+}
+
+.container-big {
+    margin-left: -10%;
+    margin-right: -10%;
+}
+
+.container--small {
+    width: 600px;
+}
+
+.container--medium {
+    width: 900px;
+}
+
+.container--rotated {
+    /* IE 9 */
+    -ms-transform: rotate(359deg);
+    /* Safari */
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+}
+
+.container--color-orange {
+    background-color: var(--accent-color);
+}
+
+.container--margin-negative {
+    margin-bottom: -18px;
+}
+
+.container--rotated-inverse {
+    -ms-transform: rotate(1deg);
+    /* Safari */
+    -webkit-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+
+.button-like {
+    background-color: var(--button-bg, var(--accent-color));
+    color: var(--button-color, var(--white));
+    border-radius: 75px;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    margin: 10px 5px;
+}
+
+.button-like--white {
+    --button-bg: transparent;
+    --button-color: var(--black);
+    border: 1px solid var(--black-a);
+    margin: 10px 5px;
+}
+
+.button-like--cherry {
+    --button-bg: var(--cherry);
+    --button-color: var(--white);
+    border: 1px solid var(--black-a);
+    margin: 10px 5px;
+}
+
+
+/*el radio es 50% del box */
+
+.circle {
+    border-radius: 50%;
+    width: var(--circle-dim, 50px);
+    height: var(--circle-dim, 50px);
+}
+
+.flex-rectangle {
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+    background-color: var(--accent-color);
+}
+
+.flex-rectangle:before {
+    content: "";
+    display: block;
+    padding-top: 5%;
+    margin-top: -15px;
+}
+
+.line {
+    width: 3px;
+    height: 150px;
+    background-color: var(--line-bg, var(--accent-color));
+    margin: var(--line-height, 40px) auto;
+}
+
+.link {
+    color: var(--accent-color);
+}
+
+.link:focus,
+.link:active,
+.link:hover {
+    color: var(--accent-color);
+}
+
+
+/* Navbar styles */
+
+.navbar__logo {
+    max-height: 40px;
+}
+
+.navbar__link {
+    font-size: var(--regular-font-size);
+    color: var(--black);
+    margin: 0 10px;
+    padding: 15px 30px;
+    padding: 15px 30px;
+}
+
+.navbar__link:focus,
+.navbar__link:active,
+.navbar__link:hover {
+    color: var(--accent-color);
+}
+
+.navbar__link--active {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 70px;
+    text-transform: uppercase;
+}
+
+.navbar__link--active:focus,
+.navbar__link--active:active,
+.navbar__link--active:hover {
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+/* usar transforms*/
+
+
+/*carrusel no usar, checar documentación bootstrap y sobreescribir y mi stylesheet*/
